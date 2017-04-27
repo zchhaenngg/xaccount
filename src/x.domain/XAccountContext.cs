@@ -6,7 +6,9 @@ namespace x.domain
     using System.Linq;
     using HandyContext;
     using x.domain.Entities;
+    using MySql.Data.Entity;
 
+    [DbConfigurationType(typeof(MySqlEFConfiguration))]
     public partial class XAccountContext : HistoryDbContext<xt_history>
     {
         public XAccountContext()
