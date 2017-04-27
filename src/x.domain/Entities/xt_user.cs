@@ -23,6 +23,10 @@ namespace x.domain.Entities
         [StringLength(255)]
         public string password { get; set; }
 
+        public int access_failed_times { get; set; }
+
+        public DateTime? unlock_time { get; set; }
+
         public virtual ICollection<xt_web> xt_webs { get; set; }
     }
 }

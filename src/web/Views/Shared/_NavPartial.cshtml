@@ -1,0 +1,100 @@
+﻿<style>
+    .navbar-hy-account {
+        width: 400px;
+        /*padding-left: 15px;*/
+        padding-bottom: 0px;
+    }
+
+        .navbar-hy-account .row {
+            margin-right: 0px;
+            margin-left: 0px;
+            margin-top: 5px;
+        }
+
+        .navbar-hy-account:before,
+        .navbar-hy-account:after {
+            display: table;
+            content: "";
+            line-height: 0;
+        }
+
+    .navbar-nav.navbar-right:last-child {
+        margin-right: 15px !important;
+    }
+
+    .navbar-hy-footer {
+        background-color: #DDD;
+    }
+
+    .navbar-hy-footer-content {
+        padding: 15px 15px 15px 15px;
+    }
+</style>
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("主页", "Index", "Home", null, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                @if (Request.IsAuthenticated)
+                {
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            您好，@User.GetLoginUsername()
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="navbar-hy-account">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <img src="http://placehold.it/120x120"
+                                                 alt="Alternate Text" class="img-responsive" />
+                                            <p class="text-center small">
+                                                <a href="#">Change Photo</a>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <span>@User.GetLoginUsername()</span>
+                                            <span>(XXX)</span>
+                                            <p class="text-muted small">
+                                                xxx@163.com
+                                            </p>
+                                            <div class="divider">
+                                            </div>
+                                            <a href="#" class="btn btn-primary btn-sm active">View Profile</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="navbar-hy-footer">
+                                    <div class="navbar-hy-footer-content">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <a href="#" class="btn btn-default btn-sm">修改密码</a>
+                                            </div>
+                                            <div class="col-md-6">
+                                                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                                                {
+                                                    @Html.AntiForgeryToken()
+                                                    <input type="submit" class="btn btn-default btn-sm pull-right" value="退出" />
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                }
+                else
+                {
+                    <li>@Html.ActionLink("登录", "Login", "Account", routeValues: null, htmlAttributes: null)</li>
+                }
+            </ul>
+        </div>
+    </div>
+</nav>
