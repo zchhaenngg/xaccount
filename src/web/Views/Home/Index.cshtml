@@ -2,3 +2,110 @@
     ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    .panel-body {
+        padding-bottom:0;
+        padding-top:0;
+    }
+    .show-grid {
+        margin-bottom: 0;
+        height:43px;
+    }
+    .show-grid [class^="col-"] {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: #eee;
+        background-color: rgba(86,61,124,.15);
+        border: 1px solid #ddd;
+        border: 1px solid rgba(86,61,124,.2);
+        height: inherit;
+    }
+    .show-grid .btn-group{
+        height:100%;
+        width:100%;
+    }
+    .show-grid .btn-group .btn {
+        padding: 0;
+        border: 0;
+        background:inherit;
+        height:inherit;
+        width:inherit;
+    }
+    .panel-group {
+        margin-bottom: 8px;
+    }
+    .panel-group:last-child {
+        margin-bottom:0;
+    }
+</style>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">百度</h3>
+    </div>
+    <div class="panel-body">
+        <div class="panel-group">
+            <div class="row show-grid">
+                <div class="col-xs-9"><a href="https://www.baidu.com">百度首页</a></div>
+                <div class="col-xs-3">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default my-btn-justified">copy</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row show-grid">
+                <div class="col-xs-9"><a href="http://news.baidu.com/">百度新闻</a></div>
+                <div class="col-xs-3">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default my-btn-justified">copy</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row show-grid">
+                <div class="col-xs-3">用户名</div>
+                <div class="col-xs-6">test</div>
+                <div class="col-xs-3">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default my-btn-justified">copy</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row show-grid">
+                <div class="col-xs-3">密码</div>
+                <div class="col-xs-6">******</div>
+                <div class="col-xs-3">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default my-btn-justified">copy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-group">
+            <div class="row show-grid">
+                <div class="col-xs-9"><a href="https://pan.baidu.com">百度云盘</a></div>
+                <div class="col-xs-3">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default my-btn-justified">copy</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row show-grid">
+                <div class="col-xs-3">用户名</div>
+                <div class="col-xs-6">test</div>
+                <div class="col-xs-3">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default my-btn-justified">copy</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row show-grid">
+                <div class="col-xs-3">密码</div>
+                <div class="col-xs-6">******</div>
+                <div class="col-xs-3">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default my-btn-justified">copy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
