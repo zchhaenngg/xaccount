@@ -104,7 +104,7 @@ namespace x.account.Controllers
         public ActionResult LogOff()
         {
             OwinService.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Account");
         }
     }
 }
