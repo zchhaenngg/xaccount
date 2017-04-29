@@ -1,53 +1,43 @@
-﻿<nav class="navbar navbar-default navbar-fixed-bottom">
+﻿<style>
+    .logoff_btn{
+        border:0;
+    }
+</style>
+<nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
       <div class="navbar-header">
           <div class="btn-group btn-group-justified" role="group" aria-label="底部菜单功能">
-              <a class="btn btn-default navbar-brand" role="button">工作区</a>
-              <a class="btn btn-default navbar-brand" role="button">我</a>
+              @if (Request.IsAuthenticated)
+              {
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default navbar-brand">工作区</button>
+                </div>
+                <div class="btn-group dropup" role="group">
+                    <button type="button" class="btn btn-default navbar-brand dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        我
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <input type="submit" class="btn btn-default btn-block logoff_btn" value="退出登录" />
+                            }
+                        </li>
+                        <li>
+                            <a href="#" class="text-center">修改密码</a>
+                        </li>
+                    </ul>
+                </div>
+              }
+              else
+              {
+                <div class="btn-group" role="group">
+                    @Html.ActionLink("登录", "Login", "Account", routeValues: null, htmlAttributes: new { @class= "btn btn-default navbar-brand" })
+                </div>
+              }
           </div>
       </div>
     </div>
 </nav>
-
-
-@*<nav class="navbar navbar-default navbar-fixed-bottom">
-    <div class="container-fluid">
-        @if (Request.IsAuthenticated)
-        {
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#my-nav-my" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">工作区</a>
-            </div>
-            <div class="collapse navbar-collapse" id="my-nav-my">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">我 <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">@User.GetLoginUsername()</a></li>
-                            <li>
-                                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                                {
-                                    @Html.AntiForgeryToken()
-                                    <input type="submit" class="btn btn-default btn-sm pull-right" value="退出登录" />
-                                }
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">修改密码</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        }
-        else
-        {
-            <div class="navbar-header">
-                @Html.ActionLink("登录", "Login", "Account", routeValues: null, htmlAttributes: null)
-            </div>
-        }
-     </div>
-</nav>*@
