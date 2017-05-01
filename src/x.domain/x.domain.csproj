@@ -66,6 +66,8 @@
     <Compile Include="Entities\xt_history.cs" />
     <Compile Include="Entities\xt_user.cs" />
     <Compile Include="Entities\xt_web.cs" />
+    <Compile Include="Entities\xt_web_account.cs" />
+    <Compile Include="Entities\xt_web_group.cs" />
     <Compile Include="Migrations\201704271512436_init.cs" />
     <Compile Include="Migrations\201704271512436_init.Designer.cs">
       <DependentUpon>201704271512436_init.cs</DependentUpon>
@@ -73,6 +75,10 @@
     <Compile Include="Migrations\201704271656489_modified_user.cs" />
     <Compile Include="Migrations\201704271656489_modified_user.Designer.cs">
       <DependentUpon>201704271656489_modified_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705011630502_modifiedALot.cs" />
+    <Compile Include="Migrations\201705011630502_modifiedALot.Designer.cs">
+      <DependentUpon>201705011630502_modifiedALot.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704271656489_modified_user.resx">
       <DependentUpon>201704271656489_modified_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705011630502_modifiedALot.resx">
+      <DependentUpon>201705011630502_modifiedALot.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -8,25 +8,16 @@ using HandyModel.Entity.Abstracts;
 
 namespace x.domain.Entities
 {
-    public class xt_user : hy_Entity
+    public class xt_web_account : hy_Entity
     {
-        public xt_user()
-        {
-            xt_webs = new HashSet<xt_web>();
-        }
-
         [Required]
         [StringLength(255)]
         public string username { get; set; }
 
-        [Required]
         [StringLength(255)]
         public string password { get; set; }
 
-        public int access_failed_times { get; set; }
-
-        public DateTime? unlock_time { get; set; }
-
-        public ICollection<xt_web> xt_webs { get; set; }
+        public xt_web xt_web { get; set; }
+        
     }
 }
