@@ -14,6 +14,10 @@ namespace x.account.Controllers
     [Authorize]
     public class AccountController : BaseController
     {
+        public ActionResult Index()
+        {
+            return View();
+        }
         //
         // GET: /Account/Login
         [AllowAnonymous]

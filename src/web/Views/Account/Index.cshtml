@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container-fluid" style="padding:0;">
+    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <button type="submit" class="btn btn-primary btn-lg btn-block logoff_btn" style="border-radius: 0;">退出登录</button>
+    }
+</div>
