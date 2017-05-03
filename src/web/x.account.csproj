@@ -186,7 +186,7 @@
     <Compile Include="Utility\OWinService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\account\signin.css" />
+    <Content Include="MyStyles\account\signin.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -208,6 +208,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Images\brand.png" />
     <Content Include="Images\icon_tabbar.png" />
+    <Content Include="MyScripts\required.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
