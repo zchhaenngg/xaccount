@@ -12,6 +12,8 @@ namespace x.account.Controllers
         private IOWinService _oWinService;
         protected IOWinService OwinService => _oWinService ?? (_oWinService = new OWinService());
 
+        public string LoginId => User.GetLoginId();
+
         protected ActionResult RedirectToLocal(string returnUrl)
         {
             if (returnUrl != null)

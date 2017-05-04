@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "新增网站";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model SiteViewModel
+<div class="container myContainer">
+    @using (Html.BeginForm("AddSite", "Site", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.Site, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Site, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.WebName, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.WebName, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default" value="提交" />
+            </div>
+        </div>
+    }
+</div>
