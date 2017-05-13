@@ -29,7 +29,7 @@ namespace x.account.App_Start
                 //}
                 CookieSecure = CookieSecureOption.SameAsRequest,
                 //tested
-                ExpireTimeSpan = TimeSpan.FromHours(4)
+                ExpireTimeSpan = TimeSpan.FromDays(30)
             });
         }
     }
